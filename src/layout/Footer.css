@@ -1,0 +1,133 @@
+.signInFooter {
+    width: 100%;
+    height: 8.3%;
+    /* margin: 30px 0 0;
+    padding: 18px 253px 16px 30px; */
+    background-color: #f4f7f8;
+}
+
+.PEEKaMEET2020 {
+    width: 121px;
+    height: 18px;
+    margin: 6px 99px 6px 0;
+    font-family: DMSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+}
+
+.Follow-Us {
+    width: 63px;
+    height: 18px;
+    margin: 6px 8px 6px 99px;
+    font-family: DMSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+}
+
+.FAQs {
+    width: 34px;
+    height: 18px;
+    margin: 0 16px 0 0;
+    font-family: DMSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+}
+
+.Privacy-Policy {
+    width: 89px;
+    height: 18px;
+    margin: 0 16px;
+    font-family: DMSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+}
+
+.About-Us-Copy {
+    width: 60px;
+    height: 18px;
+    margin: 0 16px;
+    font-family: DMSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+}
+
+.Contact-Us {
+    width: 73px;
+    height: 18px;
+    margin: 0 16px;
+    font-family: DMSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+}
+
+.Blog {
+    width: 28px;
+    height: 18px;
+    margin: 0 0 0 16px;
+    font-family: DMSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+}
+
+img.instagram-fill {
+    width: 30px;
+    height: 30px;
+    margin: 0 16px 0 8px;
+    object-fit: contain;
+}
+
+img.youtube-fill {
+    width: 30px;
+    height: 30px;
+    margin: 0 16px;
+    object-fit: contain;
+}
+
+img.facebook-box-fill {
+    width: 30px;
+    height: 30px;
+    margin: 0 16px;
+    object-fit: contain;
+}
+
+img.twitter-fill {
+    width: 30px;
+    height: 30px;
+    margin: 0 30px 0 16px;
+    object-fit: contain;
+}

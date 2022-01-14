@@ -1,0 +1,67 @@
+.Mask {
+    width: 79.1%;
+    height: 76.6%;
+    margin: 3.9% 10.5%;
+    /* padding: 2.1% 5.3% 15.3%; */
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    object-fit: contain;
+}
+
+.mainLeftDiv {
+  width: 54.5%;
+  height: 100%;
+}
+
+img.Group-18 {
+  width: 94.7%;
+  height: 79.6%;
+  margin: 4.8% 0 14.4% 4.8%;
+  /* padding: 268px 131px 123px 188px; */
+  object-fit: contain;
+}
+
+.mainRightDiv {
+  /* width: 51.8%;
+  height: 79.6%; */
+  width: 45.5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.PEEKaMEET-lets-you-n {
+  width: 87.8%;
+  height: 9.4%;
+  margin: 4.8% 6.1% 0 6.1%;
+  font-family: DMSans;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #152d4e;
+}
+
+.PEEKaMEET-lets-you-n .text-style-1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.Build-and-manage-you {
+  width: 87.8%;
+  height: 24px;
+  margin: 6.2% 6.1% 0 6.1%;
+  font-family: DMSans;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #152d4e;
+}
