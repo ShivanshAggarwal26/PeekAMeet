@@ -1,22 +1,19 @@
 import './App.css';
 import SignIn from './pages/SignIn';
-import SignInState from './context/SignInState';
-import {Route, useHistory} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import {Fragment} from 'react';
-import UserDetails from './pages/UserDetails';
+import PRoute from './components/PRoute'
 
 function App() {
-  const history = useHistory();
 
   return (
     <Fragment>
       <Route path="/" exact>
-        <SignInState>
-          <SignIn history={history}/>
-        </SignInState>
+          <SignIn />
+          {/* <PRoute /> */}
       </Route>
       <Route path="/user-details">
-        <UserDetails />
+        <PRoute />
       </Route>
     </Fragment>
   )

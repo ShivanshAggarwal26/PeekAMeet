@@ -1,13 +1,14 @@
 import InputData from "../components/InputData";
 import "./SignInForm.css";
-import SignInContext from "../context/SignInContext";
+import MainContext from "../context/MainContext";
 import { useContext } from "react";
 import axios from "axios";
 import { useState } from "react";
 import {useHistory} from "react-router-dom";
+import response from "../files/response.js";
 
 const SignInForm = () => {
-    const ctx = useContext(SignInContext);
+    const ctx = useContext(MainContext);
     const formData = ctx.formData;
 
     const [isEmailValid, setEmailValid] = useState(true);
@@ -42,14 +43,17 @@ const SignInForm = () => {
         }
 
         if (isEmailValid && isPasswordValid) {
+            ctx.updateLoading(true);
             axios.post("http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/public/user/login", data)
-            .then((response) => {
-                console.log(response)
+            .then((rsp) => {
                 history.replace("/user-details")
             }).catch((error) => {
                 console.log("Error = " + error)
+                ctx.updateResponse(response)
+                localStorage.setItem("token", response.data[0].token)
                 history.replace("/user-details")
             })
+            ctx.updateLoading(false);
         }
     }
 

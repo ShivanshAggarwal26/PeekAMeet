@@ -1,6 +1,14 @@
+import Header from "../layout/user-details/Header"
+import Main from "../layout/user-details/Main"
+import Footer from "../layout/Footer"
+
 const UserDetails = () => {
     return (
-        <h1>This is User Details page</h1>
+        <div className="rectangle-user-details">
+            <Header />
+            <Main />
+            <Footer />
+        </div>
     )
 }
 

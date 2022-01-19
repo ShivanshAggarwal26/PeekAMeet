@@ -3,6 +3,7 @@ import Group18 from "../assets/images/group-18.png";
 import SignInForm from "./SignInForm";
 
 const Main = () => {
+
     return (
         <div className="Mask">
             <div className="mainLeftDiv">
@@ -22,24 +23,24 @@ const Main = () => {
                         </span>
                     </div>
                     <div className="jobSeekerRectangle">
-                        <span class="Job-Seeker">
+                        <span className="Job-Seeker">
                             Job Seeker
                         </span>
                     </div>
-                    <div class="enterpreneurRectangle">
-                        <span class="Enterpreneur">
+                    <div className="enterpreneurRectangle">
+                        <span className="Enterpreneur">
                             Enterpreneur
                         </span>
                     </div>
-                    <div class="mompreneurRectangle">
-                        <span class="Mompreneur">
+                    <div className="mompreneurRectangle">
+                        <span className="Mompreneur">
                             Mompreneur
                         </span>
                     </div>
                 </div>
                 <div className="rectangleTags">
-                    <div class="internshipSeekerRectangle"></div>
-                    <div class="environmentalChangeRectangle"></div>
+                    <div className="internshipSeekerRectangle"></div>
+                    <div className="environmentalChangeRectangle"></div>
                 </div>
                 <span className="Build-and-manage-you">
                     {"Build and manage your network with PEEKaMEET"}

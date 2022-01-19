@@ -1,0 +1,197 @@
+.main-user-details {
+    width: 35%;
+    height: 81%;
+    background-color: #ffffff;
+    margin-top: 1.5%;
+    margin-left: 32.5%;
+    margin-right: 32.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Industrys {
+    width: 61px;
+    height: 16px;
+    margin: 0 97px 8px 0;
+    font-family: DMSans;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .Organizations-and-Groups {
+    width: 144px;
+    height: 16px;
+    margin: 0 37px 8px 0;
+    font-family: DMSans;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .Interests-and-Activi {
+    width: 127px;
+    height: 16px;
+    margin: 0 124px 8px 0;
+    font-family: DMSans;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .Alumni {
+    width: 38px;
+    height: 16px;
+    margin: 0 99px 8px 0;
+    font-family: DMSans;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .Languages {
+    width: 59px;
+    height: 16px;
+    margin: 0 21px 8px 0;
+    font-family: DMSans;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .infoClass {
+    display: block;
+    margin: 0 0 13px 14px;
+    font-family: DMSans;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #1cb54f;
+  }
+
+  .Business-Address {
+    width: 98px;
+    height: 16px;
+    margin: 0 58px 4px 0;
+    font-family: DMSans;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .addressClass {
+    margin: 4px 35px 3px 0;
+    font-family: DMSans;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+  }
+
+  .Bitmap {
+    width: 100px;
+    height: 100px;
+    /* margin: 0 95px 16px 94px; */
+  }
+
+  .userImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .userCard {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1%;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .userInfoClass {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainInfoClass {
+    /* margin: 16px 82px 6px 93px; */
+    margin: 1% 1% 1% 1%;
+    font-family: DMSans;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #152d4e;
+  }
+
+  .Share {
+    width: 62px;
+    height: 16px;
+    /* margin: 1px 0 1px 8px; */
+    font-family: DMSans;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  }
+
+  .Edit-Profile {
+    width: 62px;
+    height: 16px;
+    /* margin: 1px 0 1px 8px; */
+    font-family: DMSans;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  }
+
+  .userCardButton {
+    width: 100px;
+    height: 20%;
+    margin: 2%;
+    padding: 6px 8px 5px 39px;
+    border-radius: 4px;
+    background-color: #09a04f;
+  }
