@@ -1,0 +1,37 @@
+.notesCard {
+    width: 350px;
+    height: 100px;
+    /* border-left: 2px solid  #09a04f; */
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.notesData {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #152d4e;
+  margin: 5%;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.notesDateTime {
+  margin: 0 9px 8px 0;
+  font-family: DMSans;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9ea0a3;
+  border: 1px solid black;
+  margin: 1% 5% 2% 5%;
+}

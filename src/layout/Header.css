@@ -1,3 +1,12 @@
+.navBar {
+    overflow: hidden;
+    background-color: #09a04b;
+    position: relative;
+    width: 100%;
+    height: 7%;
+    display: flex;
+}
+
 .PEEKaMEET {
     width: 7.6%;
     height: 42.9%;
@@ -10,35 +19,43 @@
     line-height: normal;
     letter-spacing: -0.4px;
     color: #fff;
-  }
+}
 
-  .mainHeader {
-    width: 79%;
-    height: 7.3%;
-    /* margin: 0 0 30px; */
-    padding: 1% 10.5% 1% 10.5%;
-    background-color: #09a04f;
+.menuNav {
+    display: none;
+    width: 75%;
+}
+  
+.menuNav-showMenu {
+    display: block;
+    width: 75%;
+}
+
+.menuNavMain {
     display: flex;
-  }
+    align-items: center;
+    justify-content: space-around;
+}
 
-  .signInDiv {
-    width: 6.4%;
-    height: 3.9%;
-    padding: 5px 17px 4px 19px;
-    border-radius: 4px;
+.navBar .icon {
+    cursor: pointer;
     position: absolute;
-    right: 10.5%;
-  }
+    left: 90%;
+    top: 25%;
+}
 
-  .Sign-In {
-    width: 58.6%;
-    height: 70%;
-    font-family: DMSans;
-    font-size: 16px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #fff;
-  }
+.signOutDiv span{
+    background-color: #09a04b;
+    color: #ffffff;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.notesButtonDiv {
+    background-color: #09a04b;
+    color: #ffffff;
+    text-align: center;
+    border: none;
+    cursor: pointer;  
+}

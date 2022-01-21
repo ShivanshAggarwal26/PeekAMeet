@@ -1,0 +1,14 @@
+.headerIcon {
+    display: flex;
+    margin: 2%;
+}
+
+.headerIconText {
+    color: #ffffff;
+    padding-left: 2%;
+    padding-top: 2%;
+}
+
+.navLinkClass {
+    text-decoration: none;
+}

@@ -1,22 +1,35 @@
 import './App.css';
 import SignIn from './pages/SignIn';
-import SignInState from './context/SignInState';
-import {Route, useHistory} from 'react-router-dom';
+import {Route, Redirect} from 'react-router-dom';
 import {Fragment} from 'react';
+import PRoute from './components/PRoute';
+import Notes from './pages/Notes';
+import {useSelector} from 'react-redux';
 import UserDetails from './pages/UserDetails';
+import SPRoute from './components/SPRout';
 
 function App() {
-  const history = useHistory();
+
+  const mainState = useSelector((state) => {
+    return state.mainState;
+  })
+  const isLogin = mainState.isLogin;
 
   return (
     <Fragment>
       <Route path="/" exact>
-        <SignInState>
-          <SignIn history={history}/>
-        </SignInState>
+          {/* {!isLogin && <SignIn />} */}
+          {/* {isLogin && <Redirect to="/user-details" />} */}
+          {/* {isLogin && <UserDetails />} */}
+          <SPRoute />
+          {/* <PRoute /> */}
       </Route>
       <Route path="/user-details">
-        <UserDetails />
+        <PRoute pageName={<UserDetails />} />
+      </Route>
+      <Route path="/notes">
+        {/* <Notes /> */}
+        <PRoute pageName={<Notes />} />
       </Route>
     </Fragment>
   )

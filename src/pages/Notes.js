@@ -1,8 +1,8 @@
-import Header from "../layout/Header";
-import Main from "../layout/user-details/Main"
+import Header from "../layout/Header"
+import Main from "../layout/notes/Main"
 import Footer from "../layout/Footer"
 
-const UserDetails = () => {
+const Notes = () => {
     return (
         <div className="rectangle-user-details">
             <Header />
@@ -12,4 +12,4 @@ const UserDetails = () => {
     )
 }
 
-export default UserDetails
+export default Notes
