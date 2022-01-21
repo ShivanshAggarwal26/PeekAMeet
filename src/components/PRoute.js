@@ -4,8 +4,9 @@ import SignIn from "../pages/SignIn";
 
 const PRoute = (props) => {
     if (localStorage.getItem("token")) {
-        console.log("Success");
-        return <UserDetails />
+        console.log("Success")
+        const comp = props.pageName
+        return comp
     }
     return (
         <Redirect to="/" />

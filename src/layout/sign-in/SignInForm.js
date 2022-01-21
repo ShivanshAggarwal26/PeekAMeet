@@ -1,11 +1,13 @@
-import InputData from "../components/InputData";
+import InputData from "../../components/InputData";
 import "./SignInForm.css";
-import MainContext from "../context/MainContext";
+import MainContext from "../../context/MainContext";
 import { useContext } from "react";
 import axios from "axios";
 import { useState } from "react";
 import {useHistory} from "react-router-dom";
-import response from "../files/response.js";
+import response from "../../files/response";
+import { MainSliceActions } from "../../store/MainSlice";
+import { useDispatch } from "react-redux";
 
 const SignInForm = () => {
     const ctx = useContext(MainContext);
@@ -21,6 +23,7 @@ const SignInForm = () => {
         ctx.updateFormData(event.target.name, event.target.value);
     }
     const history = useHistory()
+    const dispatch = useDispatch()
 
     // const emailValid = isEmailValid && email !== "";
     // const passwordValid = isPasswordValid && password !== "";
@@ -44,6 +47,7 @@ const SignInForm = () => {
 
         if (isEmailValid && isPasswordValid) {
             ctx.updateLoading(true);
+            console.log(ctx.loading)
             axios.post("http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/public/user/login", data)
             .then((rsp) => {
                 history.replace("/user-details")
@@ -51,9 +55,9 @@ const SignInForm = () => {
                 console.log("Error = " + error)
                 ctx.updateResponse(response)
                 localStorage.setItem("token", response.data[0].token)
+                dispatch(MainSliceActions.setLogin(true))
                 history.replace("/user-details")
             })
-            ctx.updateLoading(false);
         }
     }
 

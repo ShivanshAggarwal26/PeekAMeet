@@ -1,5 +1,5 @@
 import "./Main.css";
-import Group18 from "../assets/images/group-18.png";
+import Group18 from "../../assets/images/group-18.png";
 import SignInForm from "./SignInForm";
 
 const Main = () => {

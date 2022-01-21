@@ -67,12 +67,12 @@ const Main = () => {
 
                 <div>
                     <div className="userCardButton">
-                        <span class="Share">
+                        <span className="Share">
                             Share
                         </span>
                     </div>
                     <div className="userCardButton">
-                        <span class="Edit-Profile">
+                        <span className="Edit-Profile">
                             Edit Profile
                         </span>
                     </div>
