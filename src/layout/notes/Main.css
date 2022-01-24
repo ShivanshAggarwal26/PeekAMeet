@@ -89,3 +89,9 @@
   .notesCardList {
     overflow-y: scroll;
   }
+
+  .addNoteDivClass {
+    color: #09a04f;
+    margin: 1%;
+    cursor: pointer;
+  }
