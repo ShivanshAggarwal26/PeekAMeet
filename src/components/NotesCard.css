@@ -1,11 +1,12 @@
 .notesCard {
-    width: 350px;
+    width: 450px;
     height: 100px;
     /* border-left: 2px solid  #09a04f; */
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: 5% 0% 5% 0%;
 }
 
 .notesData {
@@ -35,3 +36,43 @@
   border: 1px solid black;
   margin: 1% 5% 2% 5%;
 }
+
+.notesDataDiv {
+  display: flex;
+}
+
+.editDeleteDiv {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.dropdownBtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content span {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content span:hover {background-color: #ddd;}
+
+.editDeleteDiv:hover .dropdown-content {display: block;}
+
+.editDeleteDiv:hover .dropbtn {background-color: #3e8e41;}

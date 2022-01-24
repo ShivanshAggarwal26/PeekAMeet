@@ -7,6 +7,8 @@ import Notes from './pages/Notes';
 import {useSelector} from 'react-redux';
 import UserDetails from './pages/UserDetails';
 import SPRoute from './components/SPRout';
+import AddNotes from './pages/AddNotes';
+import EditNote from './pages/EditNote';
 
 function App() {
 
@@ -30,6 +32,12 @@ function App() {
       <Route path="/notes">
         {/* <Notes /> */}
         <PRoute pageName={<Notes />} />
+      </Route>
+      <Route path="/add-notes">
+        <PRoute pageName={<AddNotes />} />
+      </Route>
+      <Route path="/edit-note/:noteKey">
+        <PRoute pageName={<EditNote />} />
       </Route>
     </Fragment>
   )

@@ -1,11 +1,14 @@
 import "./Main.css";
 import MainContext from "../../context/MainContext";
-import { useContext } from "react";
+import { useContext, useEffect, useRef, useCallback } from "react";
 import response from "../../files/response";
 import userIcon from "../../assets/images/userIcon/userIcon.webp";
-import GetNotesData from "../../views/GetNotesData";
 import NextButton from "../../components/NextButton";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {useHistory} from "react-router";
+import { getNoteData } from "../../store/notes-actions";
+import NotesCard from "../../components/NotesCard";
+import { MainSliceActions } from "../../store/MainSlice";
 
 const Main = () => {
     // const ctx = useContext(MainContext);
@@ -17,11 +20,64 @@ const Main = () => {
     const jobTitle = data.jobTitle;
     const company = data.company;
 
+    const dispatch = useDispatch()
+
+    const history = useHistory();
+
     const loadingNotes = useSelector((state) => {
         return state.mainState.loadingNotes;
     })
 
-    const notesData = <GetNotesData />
+    const pageVal = useSelector((state) => {
+        return state.mainState.pageVal
+    })
+    
+    const addNotesClickHandler = () => {
+        history.replace("/add-notes")
+    }
+
+    const notesListOne = useSelector((state) => {
+        return state.notes.notesListOne
+    })
+
+    // const notesData = <GetNotesData />
+    // console.log(notesData)
+
+    const observer = useRef()
+    const lastNoteCard = useCallback(node => {
+        if (loadingNotes) return
+        if (observer.current) observer.current.disconnect()
+        observer.current = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+                dispatch(MainSliceActions.setPageVal())
+            }
+        })
+        if (node) observer.current.observe(node)
+    }, [loadingNotes, dispatch])
+
+    useEffect(() => {
+        dispatch(getNoteData(pageVal))
+    }, [dispatch, pageVal])
+
+    console.log(notesListOne.length)
+
+    let i = 0
+    const notesCardList = notesListOne.map((note) => {
+        i += 1
+        if (i === notesListOne.length) {
+            return (
+            <div ref={lastNoteCard}>
+                <NotesCard note={note} key={note.noteKey}/>
+            </div>
+                )
+        } else {
+            return (
+            <div>
+                <NotesCard note={note} key={note.noteKey}/>
+            </div>
+            )
+        }
+    })
 
     return (
         <div className="main-notes">
@@ -51,8 +107,13 @@ const Main = () => {
                 </div>            
             </div>
 
+            <div className="addNoteDivClass">
+                <span onClick={addNotesClickHandler}>Add Notes</span>
+            </div>
+
             <div className="notesCardList">
-                {notesData}
+                {/* {notesData} */}
+                {notesCardList}
                 <NextButton />
                 {loadingNotes && <p>Loading...</p>}
             </div>
