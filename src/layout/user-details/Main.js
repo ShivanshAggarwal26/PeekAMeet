@@ -4,6 +4,11 @@ import { useContext } from "react";
 import RectangleButton from "../../components/RectangleButton";
 import response from "../../files/response";
 import userIcon from "../../assets/images/userIcon/userIcon.webp";
+import mailIcon from "../../assets/images/information-icons/mail-icon.png";
+import websiteIcon from "../../assets/images/information-icons/website-icon.png";
+import callIcon from "../../assets/images/information-icons/call-icon.png";
+import MainRectangle from "../../components/MainRectangle";
+import classes from "../../components/MainRectangle.module.css";
 
 const Main = () => {
     // const ctx = useContext(MainContext);
@@ -14,31 +19,51 @@ const Main = () => {
     const industry = data.industry;
     const industryTag = industry.map((val) => {
         return (
-            <RectangleButton tagValue={val} />
+            // <RectangleButton tagValue={val} />
+            <MainRectangle inputData={val}
+                            divClassValue={classes.industryDiv}
+                            spanClassValue={classes.industrySpan}
+                            key={val}/>
         )
     })
     const organisationGroups = data.organisationGroups;
     const ogTag = organisationGroups.map((val) => {
         return (
-            <RectangleButton tagValue={val} />
+            // <RectangleButton tagValue={val} />
+            <MainRectangle inputData={val}
+                            divClassValue={classes.organizationGroupDiv}
+                            spanClassValue={classes.organizationGroupSpan}
+                            key={val}/>
         )
     })
     const interestActivities = data.interestActivities;
     const iaTag = interestActivities.map((val) => {
         return (
-            <RectangleButton tagValue={val} />
+            // <RectangleButton tagValue={val} />
+            <MainRectangle inputData={val}
+                            divClassValue={classes.interestActivityDiv}
+                            spanClassValue={classes.interestActivitySpan}
+                            key={val}/>
         )
     })
     const alumni = data.alumni;
     const alumniTag = alumni.map((val) => {
         return (
-            <RectangleButton tagValue={val} />
+            // <RectangleButton tagValue={val} />
+            <MainRectangle inputData={val}
+                            divClassValue={classes.alumniDiv}
+                            spanClassValue={classes.alumniSpan}
+                            key={val}/>
         )
     })
     const languages = data.languages;
     const languagesTag = languages.map((val) => {
         return (
-            <RectangleButton tagValue={val} />
+            // <RectangleButton tagValue={val} />
+            <MainRectangle inputData={val}
+                            divClassValue={classes.languageDiv}
+                            spanClassValue={classes.languageSpan}
+                            key={val}/>
         )
     })
     const userEmail = data.email;
@@ -87,53 +112,56 @@ const Main = () => {
                 <span>{bio}</span>
             </div>
             
-            <div>
+            <div id="user-details-card-id">
                 <span className="Industrys">
                     Industry(s)
                 </span>
                 {industryTag}
             </div>
             
-            <div>
+            <div id="user-details-card-id">
                 <span className="Organizations-and-Groups">
                     Organizations and Groups
                 </span>
                 {ogTag}
             </div>
             
-            <div>
+            <div id="user-details-card-id">
                 <span className="Interests-and-Activi">
                     Interests and Activities
                 </span>
                 {iaTag}
             </div>
             
-            <div>
+            <div id="user-details-card-id">
                 <span className="Alumni">
                     Alumni
                 </span>
                 {alumniTag}
             </div>
 
-            <div>
+            <div id="user-details-card-id">
                 <span className="Languages">
                     Languages
                 </span>
                 {languagesTag}
             </div>
 
-            <div>
-                <div>
+            <div className="userInformationDiv">
+                <div id="userInformationId">
+                    <img src={mailIcon} alt=""></img>
                     <span className="infoClass">
                         {userEmail}
                     </span>
                 </div>
-                <div>
+                <div id="userInformationId">
+                    <img src={websiteIcon} alt=""></img>
                     <span className="infoClass">
                         {website}
                     </span>
                 </div>
-                <div>
+                <div id="userInformationId">
+                    <img src={callIcon} alt=""></img>
                     <span className="infoClass">
                         {userPhone}
                     </span>

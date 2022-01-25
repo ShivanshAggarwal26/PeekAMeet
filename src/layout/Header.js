@@ -39,8 +39,8 @@ const Header = () => {
                     <HeaderButton icon={ContactIcon} text={"Contacts"}/>
                     <HeaderButton icon={MessageIcon} text={"Messages"}/>
                     <HeaderButton icon={ScanIcon} text={"Scan"}/>
-                    <HeaderButton icon={MovementIcon} text={"The Movement"}/>
-                    <HeaderButton icon={NotificationIcon} text={"Notifications"}/>
+                    {/* <HeaderButton icon={MovementIcon} text={"The Movement"}/>
+                    <HeaderButton icon={NotificationIcon} text={"Notifications"}/> */}
                     <div className="notesButtonDiv">
                         <span onClick={notesClickHandler}>Notes</span>
                     </div>

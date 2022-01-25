@@ -1,6 +1,8 @@
 import "./Main.css";
 import Group18 from "../../assets/images/group-18.png";
 import SignInForm from "./SignInForm";
+import MainRectangle from "../../components/MainRectangle";
+import classes from "../../components/MainRectangle.module.css";
 
 const Main = () => {
 
@@ -17,7 +19,7 @@ const Main = () => {
                     {" lets you network more effectively to achieve your business and career goals"}
                 </span>
                 <div className="rectangleTags">
-                    <div className="freelancerRectangle">
+                    {/* <div className="freelancerRectangle">
                         <span className="Freelancer">
                             Freelancer
                         </span>
@@ -36,11 +38,30 @@ const Main = () => {
                         <span className="Mompreneur">
                             Mompreneur
                         </span>
-                    </div>
+                    </div> */}
+
+                    <MainRectangle inputData={"Freelancer"} 
+                                    divClassValue={classes.freelancerDiv} 
+                                    spanClassValue={classes.freelancerSpan}/>
+                    <MainRectangle inputData={"Job Seeker"} 
+                                    divClassValue={classes.jobSeekerDiv} 
+                                    spanClassValue={classes.jobSeekerSpan}/>
+                    <MainRectangle inputData={"Enterpreneur"} 
+                                    divClassValue={classes.enterpreneurDiv} 
+                                    spanClassValue={classes.enterpreneurSpan}/>
+                    <MainRectangle inputData={"Mompreneur"} 
+                                    divClassValue={classes.mompreneurDiv} 
+                                    spanClassValue={classes.mompreneurSpan}/>
                 </div>
                 <div className="rectangleTags">
-                    <div className="internshipSeekerRectangle"></div>
-                    <div className="environmentalChangeRectangle"></div>
+                    {/* <div className="internshipSeekerRectangle"></div>
+                    <div className="environmentalChangeRectangle"></div> */}
+                    <MainRectangle inputData={"Internship Seeker"} 
+                                    divClassValue={classes.internshipSeekerDiv} 
+                                    spanClassValue={classes.internshipSeekerSpan}/>
+                    <MainRectangle inputData={"Environmental Change Maker"} 
+                                    divClassValue={classes.environmentalChangeMakerDiv} 
+                                    spanClassValue={classes.environmentalChangeMakerSpan}/>
                 </div>
                 <span className="Build-and-manage-you">
                     {"Build and manage your network with PEEKaMEET"}

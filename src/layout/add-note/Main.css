@@ -54,8 +54,6 @@
 }
 
 .Follow-Up-Date {
-  /* width: 84px;
-  height: 16px; */
   font-family: DMSans;
   font-size: 12px;
   font-weight: 500;
@@ -68,8 +66,6 @@
 }
 
 .time {
-  /* width: 28px;
-  height: 16px; */
   font-family: DMSans;
   font-size: 12px;
   font-weight: 500;
@@ -102,7 +98,7 @@
 .dateTimeInputDiv {
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 55%;
 }
 
 .dateInputDiv {
@@ -125,7 +121,6 @@
 .noteSpan {
   width: 34px;
   height: 16px;
-  /* margin: 0 413px 2px 0; */
   font-family: DMSans;
   font-size: 12px;
   font-weight: 500;
