@@ -13,7 +13,6 @@
 .Bitmap {
     width: 100px;
     height: 100px;
-    /* margin: 0 95px 16px 94px; */
   }
 
   .userImage {
@@ -50,11 +49,8 @@
   }
 
   .Share {
-    width: 62px;
-    height: 16px;
-    /* margin: 1px 0 1px 8px; */
     font-family: DMSans;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -64,11 +60,8 @@
   }
 
   .Edit-Profile {
-    width: 62px;
-    height: 16px;
-    /* margin: 1px 0 1px 8px; */
     font-family: DMSans;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -81,13 +74,14 @@
     width: 100px;
     height: 20%;
     margin: 2%;
-    padding: 6px 8px 5px 39px;
     border-radius: 4px;
     background-color: #09a04f;
   }
 
   .notesCardList {
     overflow-y: scroll;
+    width: 100%;
+    height: 100%;
   }
 
   .addNoteDivClass {

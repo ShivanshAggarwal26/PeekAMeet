@@ -22,13 +22,14 @@ const Main = () => {
     const dispatch = useDispatch()
 
     const addNoteClickHandler = () => {
+        const dateTime = addFormData.dateVal + "T" + addFormData.timeVal + ".202Z"
 
         const obj = {
             "createdFor": "5de9d89c64b57f3acc326725",
             "noteText": addFormData.noteTextVal,
             "type": "followup",
             "createdBy": "5de9d89c64b57f3acc326724",
-            "createdAt": "2019-12-16T09:53:46.202Z",
+            "createdAt": dateTime,
             "updatedAt": "2019-12-16T10:17:23.717Z",
             "id": "5df7542a38ebb518325d87e7"
         }
@@ -89,7 +90,7 @@ const Main = () => {
                     <span className="time">
                         Time
                     </span>
-                    <input className="timeInputClass" type="time" 
+                    <input className="timeInputClass" type="time" step="1"
                             onChange={timeChangeHandler} value={addFormData.timeVal}></input>
                 </div>
             </div>

@@ -3,7 +3,6 @@ import MainContext from "../../context/MainContext";
 import { useContext, useEffect, useRef, useCallback } from "react";
 import response from "../../files/response";
 import userIcon from "../../assets/images/userIcon/userIcon.webp";
-import NextButton from "../../components/NextButton";
 import { useDispatch, useSelector } from "react-redux";
 import {useHistory} from "react-router";
 import { getNoteData } from "../../store/notes-actions";
@@ -39,9 +38,6 @@ const Main = () => {
     const notesListOne = useSelector((state) => {
         return state.notes.notesListOne
     })
-
-    // const notesData = <GetNotesData />
-    // console.log(notesData)
 
     const observer = useRef()
     const lastNoteCard = useCallback(node => {
@@ -112,9 +108,7 @@ const Main = () => {
             </div>
 
             <div className="notesCardList">
-                {/* {notesData} */}
                 {notesCardList}
-                <NextButton />
                 {loadingNotes && <p>Loading...</p>}
             </div>
 

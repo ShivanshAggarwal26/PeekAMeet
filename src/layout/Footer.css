@@ -1,15 +1,16 @@
 .signInFooter {
     width: 100%;
-    height: 8.3%;
-    /* margin: 30px 0 0;
-    padding: 18px 253px 16px 30px; */
+    height: 5.9%;
     background-color: #f4f7f8;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .PEEKaMEET2020 {
     width: 121px;
     height: 18px;
-    margin: 6px 99px 6px 0;
+    margin: 20px 99px 6px 0;
     font-family: DMSans;
     font-size: 14px;
     font-weight: normal;
@@ -18,12 +19,13 @@
     line-height: normal;
     letter-spacing: normal;
     color: #152d4e;
+    text-align: center
 }
 
 .Follow-Us {
     width: 63px;
     height: 18px;
-    margin: 6px 8px 6px 99px;
+    margin: 20px 10px 6px 0;
     font-family: DMSans;
     font-size: 14px;
     font-weight: normal;
@@ -37,7 +39,21 @@
 .FAQs {
     width: 34px;
     height: 18px;
-    margin: 0 16px 0 0;
+    margin: 15px 16px;
+    font-family: DMSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+}
+
+.Terms-Conditions {
+    width: 128px;
+    height: 18px;
+    margin: 15px 16px;
     font-family: DMSans;
     font-size: 14px;
     font-weight: normal;
@@ -51,7 +67,21 @@
 .Privacy-Policy {
     width: 89px;
     height: 18px;
-    margin: 0 16px;
+    margin: 15px 16px;
+    font-family: DMSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;;
+}
+
+.About-Us-Copy {
+    width: 60px;
+    height: 18px;
+    margin: 15px 16px;
     font-family: DMSans;
     font-size: 14px;
     font-weight: normal;
@@ -62,10 +92,10 @@
     color: #152d4e;
 }
 
-.About-Us-Copy {
-    width: 60px;
+.Press {
+    width: 35px;
     height: 18px;
-    margin: 0 16px;
+    margin: 15px 16px;
     font-family: DMSans;
     font-size: 14px;
     font-weight: normal;
@@ -79,7 +109,21 @@
 .Contact-Us {
     width: 73px;
     height: 18px;
-    margin: 0 16px;
+    margin: 15px 16px;
+    font-family: DMSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+}
+
+.Perks {
+    width: 35px;
+    height: 18px;
+    margin: 15px 16px;
     font-family: DMSans;
     font-size: 14px;
     font-weight: normal;
@@ -93,7 +137,7 @@
 .Blog {
     width: 28px;
     height: 18px;
-    margin: 0 0 0 16px;
+    margin: 15px 16px;
     font-family: DMSans;
     font-size: 14px;
     font-weight: normal;
@@ -107,27 +151,27 @@
 img.instagram-fill {
     width: 30px;
     height: 30px;
-    margin: 0 16px 0 8px;
+    margin: 10px 16px;
     object-fit: contain;
 }
 
 img.youtube-fill {
     width: 30px;
     height: 30px;
-    margin: 0 16px;
+    margin: 10px 16px;
     object-fit: contain;
 }
 
 img.facebook-box-fill {
     width: 30px;
     height: 30px;
-    margin: 0 16px;
+    margin: 10px 16px;
     object-fit: contain;
 }
 
 img.twitter-fill {
     width: 30px;
     height: 30px;
-    margin: 0 30px 0 16px;
+    margin: 10px 30px 10px 16px;
     object-fit: contain;
 }
