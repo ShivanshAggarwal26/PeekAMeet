@@ -1,7 +1,6 @@
 import "./Main.css";
-import MainContext from "../../context/MainContext";
-import { useContext } from "react";
-import RectangleButton from "../../components/RectangleButton";
+// import MainContext from "../../context/MainContext";
+// import { useContext } from "react";
 import response from "../../files/response";
 import userIcon from "../../assets/images/userIcon/userIcon.webp";
 import mailIcon from "../../assets/images/information-icons/mail-icon.png";
@@ -11,9 +10,26 @@ import MainRectangle from "../../components/MainRectangle";
 import classes from "../../components/MainRectangle.module.css";
 
 const Main = () => {
-    // const ctx = useContext(MainContext);
-    // const response = ctx.response;
-    const data = response.data[0].customer;
+    // const ctx = useContext(MainContext)
+
+    // if (localStorage.getItem("token")) {
+    //     const userId = localStorage.getItem("userId")
+    //     axios.get("http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/user/nearby",
+    //                 {
+    //                     params: {
+    //                         userId: userId
+    //                     }
+    //                 }).then((res) => {
+    //                     console.log(res)
+    //                 }).catch((error) => {
+    //                     console.log(error)
+    //                     ctx.updateResponse(response)
+    //                 })
+    // }
+
+    // const response = ctx.response
+
+    const data = response.data[0].customer
     const tagline = data.tagline;
     const bio = data.bio;
     const industry = data.industry;

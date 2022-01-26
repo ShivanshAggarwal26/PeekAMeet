@@ -62,13 +62,13 @@ const Main = () => {
         i += 1
         if (i === notesListOne.length) {
             return (
-            <div ref={lastNoteCard}>
+            <div ref={lastNoteCard} key={note.noteKey}>
                 <NotesCard note={note} key={note.noteKey}/>
             </div>
                 )
         } else {
             return (
-            <div>
+            <div key={note.noteKey}>
                 <NotesCard note={note} key={note.noteKey}/>
             </div>
             )

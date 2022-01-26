@@ -65,7 +65,7 @@ const Main = () => {
     }
 
     return (
-        <div className="main-notes">
+        <div className="main-add-notes">
 
             <div className="addNoteHeaderDiv">
                 <span className="Add-Note">

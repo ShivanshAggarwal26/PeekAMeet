@@ -1,7 +1,6 @@
 import "./NotesCard.css"
-import { notesDataActions } from "../store/notes-data-slice"
+import { useState } from "react"
 import { useDispatch } from "react-redux"
-import DeleteNote from "../views/DeleteNote"
 import { deleteNoteData } from "../store/notes-actions"
 import {useHistory} from "react-router"
 
@@ -12,25 +11,33 @@ const NotesCard = (props) => {
     const noteTime = notesCard.notesDateTime.notesTime + ", "
     const noteKey = notesCard.noteKey
 
+    const [cardClick, setCardClick] = useState(false)
+
+    const toggleCard = () => {
+        setCardClick(!cardClick)
+    }
+
     const dispatch = useDispatch()
     const history = useHistory()
 
     const deleteNoteClickHandler = () => {
-        console.log("Hello")
-        // dispatch(notesDataActions.setDeleteNoteKey(noteKey))
-        // const deleteNoteReturnValue = <DeleteNote deleteNoteKey={noteKey}/>
         dispatch(deleteNoteData(noteKey))
-        // console.log(deleteNoteReturnValue)
     }
 
     const editNoteClickHandler = () => {
         history.push(`/edit-note/${noteKey}`)
     }
+
+    console.log(typeof(noteText))
+
+    const showNoteText = noteText.length > 40 ? noteText.substring(0, 40) + "..." : noteText
     
     return (
         <div className="notesCard">
             <div className="notesDataDiv">
-                <span className="notesData">{noteText}</span>
+                <span className="notesData" onClick={toggleCard}>
+                    {cardClick ? noteText : showNoteText}
+                </span>
                 <div className="editDeleteDiv">
                     <span className="dropdownBtn">...</span>
                     <div className="dropdown-content">
