@@ -25,10 +25,12 @@ const Main = (props) => {
     const notesData = notesListOne.filter(note => note.noteKey === noteKey)
 
     const noteTextVal = notesData.length > 0 ? notesData[0].noteText : ""
+    const noteDateVal = notesData.length > 0 ? notesData[0].dateVal : ""
+    const noteTimeVal = notesData.length > 0 ? notesData[0].timeVal : ""
 
     const [editFormData, setEditFormData] = useState({
-        dateVal: "",
-        timeVal: "",
+        dateVal: noteDateVal,
+        timeVal: noteTimeVal,
         noteTextVal: noteTextVal
     })
 
@@ -74,7 +76,7 @@ const Main = (props) => {
     }
 
     return (
-        <div className="main-notes">
+        <div className="main-edit-notes">
 
             <div className="editNoteHeaderDiv">
                 <span className="Edit-Note">
@@ -99,7 +101,7 @@ const Main = (props) => {
                     <span className="time">
                         Time
                     </span>
-                    <input className="timeInputClass" type="time" 
+                    <input className="timeInputClass" type="time" step="1" 
                             onChange={timeChangeHandler} value={editFormData.timeVal}></input>
                 </div>
             </div>

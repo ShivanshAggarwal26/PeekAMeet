@@ -11,16 +11,24 @@ import { useDispatch } from "react-redux";
 
 const SignInForm = () => {
     const ctx = useContext(MainContext);
-    const formData = ctx.formData;
+    // const formData = ctx.formData;
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
     const [isEmailValid, setEmailValid] = useState(true);
     const [isPasswordValid, setPasswordValid] = useState(true);
 
-    const email = formData.Email;
-    const password = formData.Password;
+    // const email = formData.Email;
+    // const password = formData.Password;
     
     const inputDataChangeHandler = (event) => {
-        ctx.updateFormData(event.target.name, event.target.value);
+        // ctx.updateFormData(event.target.name, event.target.value);
+        if (event.target.name === "Email") {
+            setEmail(event.target.value)
+        } else {
+            setPassword(event.target.value)
+        }
     }
     const history = useHistory()
     const dispatch = useDispatch()
@@ -47,7 +55,6 @@ const SignInForm = () => {
 
         if (isEmailValid && isPasswordValid) {
             ctx.updateLoading(true);
-            console.log(ctx.loading)
             axios.post("http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/public/user/login", data)
             .then((rsp) => {
                 history.replace("/user-details")
@@ -55,6 +62,7 @@ const SignInForm = () => {
                 console.log("Error = " + error)
                 ctx.updateResponse(response)
                 localStorage.setItem("token", response.data[0].token)
+                localStorage.setItem("userId", response.data[0].customer._id)
                 dispatch(MainSliceActions.setLogin(true))
                 history.replace("/user-details")
             })

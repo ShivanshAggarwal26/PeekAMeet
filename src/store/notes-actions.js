@@ -90,10 +90,14 @@ export const getNoteData = (page) => {
                 if (j < page) {
                     const dateTime = docs[i].createdAt;
                     const notesDateTime = convertDateTime(dateTime)
+                    const dateVal = dateTime.split("T")[0]
+                    const timeVal = dateTime.split("T")[1].split(".")[0]
                     notesList.push({
                         noteText: docs[i].noteText,
                         notesDateTime: notesDateTime,
-                        noteKey: i
+                        noteKey: i,
+                        dateVal: dateVal,
+                        timeVal: timeVal
                     })
                 }
                 j += 1
