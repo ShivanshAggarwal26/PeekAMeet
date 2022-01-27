@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import response from "../../files/response";
 import { useDispatch } from "react-redux";
 import { addNoteData } from "../../store/notes-actions";
+import {useHistory} from "react-router-dom"
 
 const Main = () => {
     // const ctx = useContext(MainContext);
@@ -20,6 +21,7 @@ const Main = () => {
     })
 
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const addNoteClickHandler = () => {
         const dateTime = addFormData.dateVal + "T" + addFormData.timeVal + ".202Z"
@@ -31,7 +33,7 @@ const Main = () => {
             "createdBy": "5de9d89c64b57f3acc326724",
             "createdAt": dateTime,
             "updatedAt": "2019-12-16T10:17:23.717Z",
-            "id": "5df7542a38ebb518325d87e7"
+            // "id": "5df7542a38ebb518325d87e7"
         }
 
         dispatch(addNoteData(obj))
@@ -41,6 +43,8 @@ const Main = () => {
             timeVal: "",
             noteTextVal: ""
         })
+
+        history.replace("/notes")
     }
 
     const dateChangeHandler = (event) => {
@@ -97,8 +101,10 @@ const Main = () => {
 
             <div className="noteTextInputDiv">
                 <span className="noteSpan">Notes</span>
-                <input className="noteTextClass" type="text" 
-                        onChange={noteTextChangeHandler} value={addFormData.noteTextVal}></input>
+                {/* <input className="noteTextClass" type="text" 
+                        onChange={noteTextChangeHandler} value={addFormData.noteTextVal}></input> */}
+                <textarea className="noteTextClass" type="text"
+                        onChange={noteTextChangeHandler} value={addFormData.noteTextVal}></textarea>
             </div>
 
             <div className="addNoteButtonDiv">

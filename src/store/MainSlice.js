@@ -1,8 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    isLogin: false,
-    pageVal: 5,
+    isLogin: true,
+    // pageVal: 1,
     loadingNotes: false
 }
 
@@ -13,9 +13,9 @@ const MainSlice = createSlice({
         setLogin(state, action) {
             state.isLogin = action.payload;
         },
-        setPageVal(state) {
-            state.pageVal += 5;
-        },
+        // setPageVal(state) {
+        //     state.pageVal += 1;
+        // },
         setLoadingNotes(state, action) {
             state.loadingNotes = action.payload;
         }

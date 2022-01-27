@@ -23,8 +23,13 @@ function App() {
           {/* {!isLogin && <SignIn />} */}
           {/* {isLogin && <Redirect to="/user-details" />} */}
           {/* {isLogin && <UserDetails />} */}
-          <SPRoute />
+          {/* <SPRoute /> */}
+          <PRoute pageName={<UserDetails />} />
           {/* <PRoute /> */}
+      </Route>
+      <Route path="/sign-in">
+        {/* <Redirect to="/" /> */}
+        <SPRoute pageName={<SignIn />} />
       </Route>
       <Route path="/user-details">
         <PRoute pageName={<UserDetails />} />

@@ -22,11 +22,13 @@ const Main = (props) => {
         return state.notes.notesListOne
     })
 
-    const notesData = notesListOne.filter(note => note.noteKey === noteKey)
+    const notesData = notesListOne.filter(note => note.noteKey == noteKey)
 
     const noteTextVal = notesData.length > 0 ? notesData[0].noteText : ""
     const noteDateVal = notesData.length > 0 ? notesData[0].dateVal : ""
     const noteTimeVal = notesData.length > 0 ? notesData[0].timeVal : ""
+
+    console.log(noteKey)
 
     const [editFormData, setEditFormData] = useState({
         dateVal: noteDateVal,
@@ -46,7 +48,7 @@ const Main = (props) => {
             "createdBy": "5de9d89c64b57f3acc326724",
             "createdAt": dateTime,
             "updatedAt": "2019-12-16T10:17:23.717Z",
-            "id": "5df7542a38ebb518325d87e7"
+            // "id": "5df7542a38ebb518325d87e7"
         }
 
         dispatch(editNoteData(obj, noteKey))
@@ -73,6 +75,10 @@ const Main = (props) => {
             ...editFormData,
             noteTextVal: event.target.value
         })
+    }
+
+    const cancelNoteClickHandler = () => {
+        history.replace("/notes")
     }
 
     return (
@@ -108,12 +114,15 @@ const Main = (props) => {
 
             <div className="noteTextInputDiv">
                 <span className="noteSpan">Notes</span>
-                <input className="noteTextClass" type="text"
-                        onChange={noteTextChangeHandler} value={editFormData.noteTextVal}></input>
+                {/* <input className="noteTextClass" type="text"
+                        onChange={noteTextChangeHandler} value={editFormData.noteTextVal}></input> */}
+                <textarea className="noteTextClass" type="text"
+                        onChange={noteTextChangeHandler} value={editFormData.noteTextVal}></textarea>
             </div>
 
             <div className="editNoteButtonDiv">
                 <button className="editNoteButton" onClick={editNoteClickHandler}>Edit Note</button>
+                <button className="cancelEditButton" onClick={cancelNoteClickHandler}>Cancel</button>
             </div>
 
         </div>

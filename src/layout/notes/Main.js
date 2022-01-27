@@ -8,6 +8,7 @@ import {useHistory} from "react-router";
 import { getNoteData } from "../../store/notes-actions";
 import NotesCard from "../../components/NotesCard";
 import { MainSliceActions } from "../../store/MainSlice";
+import { notesDataActions } from "../../store/notes-data-slice";
 
 const Main = () => {
     // const ctx = useContext(MainContext);
@@ -28,12 +29,16 @@ const Main = () => {
     })
 
     const pageVal = useSelector((state) => {
-        return state.mainState.pageVal
+        return state.notes.pageVal
     })
-    
+
     const addNotesClickHandler = () => {
-        history.replace("/add-notes")
+        history.push("/add-notes")
     }
+
+    const hasMore = useSelector((state) => {
+        return state.notes.hasMore
+    })
 
     const notesListOne = useSelector((state) => {
         return state.notes.notesListOne
@@ -44,18 +49,19 @@ const Main = () => {
         if (loadingNotes) return
         if (observer.current) observer.current.disconnect()
         observer.current = new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting) {
-                dispatch(MainSliceActions.setPageVal())
+            if (entries[0].isIntersecting && hasMore) {
+                console.log("Hello World")
+                // dispatch(MainSliceActions.setLoadingNotes(!loadingNotes))
+                dispatch(notesDataActions.setPageVal())
             }
         })
         if (node) observer.current.observe(node)
-    }, [loadingNotes, dispatch])
+    }, [loadingNotes, hasMore, dispatch])
 
     useEffect(() => {
+        dispatch(MainSliceActions.setLoadingNotes(true))
         dispatch(getNoteData(pageVal))
     }, [dispatch, pageVal])
-
-    console.log(notesListOne.length)
 
     let i = 0
     const notesCardList = notesListOne.map((note) => {
@@ -109,7 +115,7 @@ const Main = () => {
 
             <div className="notesCardList">
                 {notesCardList}
-                {loadingNotes && <p>Loading...</p>}
+                {loadingNotes && <div className="loaderClass">Loading...</div>}
             </div>
 
         </div>

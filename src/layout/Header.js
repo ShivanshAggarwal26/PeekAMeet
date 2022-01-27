@@ -11,6 +11,7 @@ import NotificationIcon from "../assets/images/navBar-icons/group-copy-11.png"
 import MenuIcon from "../assets/images/navBar-icons/menu.png"
 import SignOut from "../views/SignOut"
 import { useHistory } from "react-router"
+import { Redirect } from "react-router"
 
 const Header = () => {
     const [navBarOpen, setNavBarOpen] = useState(true)
