@@ -26,7 +26,7 @@ const Main = () => {
 
     useEffect(() => {
         getResponse();
-    })
+    }, []);
 
     const data = response.data[0].customer;
 
