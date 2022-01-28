@@ -47,7 +47,8 @@ const Main = (props) => {
             "type": "followup",
             "createdBy": "5de9d89c64b57f3acc326724",
             "createdAt": dateTime,
-            "updatedAt": "2019-12-16T10:17:23.717Z",
+            // "updatedAt": "2019-12-16T10:17:23.717Z",
+            "updatedAt": dateTime
             // "id": "5df7542a38ebb518325d87e7"
         }
 

@@ -1,5 +1,5 @@
 import "./Main.css";
-import MainContext from "../../context/MainContext";
+// import MainContext from "../../context/MainContext";
 import { useContext, useEffect, useRef, useCallback } from "react";
 import response from "../../files/response";
 import userIcon from "../../assets/images/userIcon/userIcon.webp";
@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {useHistory} from "react-router";
 import { getNoteData } from "../../store/notes-actions";
 import NotesCard from "../../components/NotesCard";
-import { MainSliceActions } from "../../store/MainSlice";
+// import { MainSliceActions } from "../../store/MainSlice";
 import { notesDataActions } from "../../store/notes-data-slice";
 
 const Main = () => {
@@ -25,7 +25,8 @@ const Main = () => {
     const history = useHistory();
 
     const loadingNotes = useSelector((state) => {
-        return state.mainState.loadingNotes;
+        // return state.mainState.loadingNotes;
+        return state.notes.loadingNotes;
     })
 
     const pageVal = useSelector((state) => {
@@ -59,7 +60,8 @@ const Main = () => {
     }, [loadingNotes, hasMore, dispatch])
 
     useEffect(() => {
-        dispatch(MainSliceActions.setLoadingNotes(true))
+        // dispatch(MainSliceActions.setLoadingNotes(true))
+        dispatch(notesDataActions.setLoadingNotes(true))
         dispatch(getNoteData(pageVal))
     }, [dispatch, pageVal])
 

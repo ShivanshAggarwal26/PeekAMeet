@@ -6,8 +6,8 @@ import axios from "axios";
 import { useState } from "react";
 import {useHistory} from "react-router-dom";
 import response from "../../files/response";
-import { MainSliceActions } from "../../store/MainSlice";
-import { useDispatch } from "react-redux";
+// import { MainSliceActions } from "../../store/MainSlice";
+// import { useDispatch } from "react-redux";
 
 const SignInForm = () => {
     const ctx = useContext(MainContext);
@@ -31,7 +31,7 @@ const SignInForm = () => {
         }
     }
     const history = useHistory()
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     // const emailValid = isEmailValid && email !== "";
     // const passwordValid = isPasswordValid && password !== "";

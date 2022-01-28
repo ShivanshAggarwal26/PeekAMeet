@@ -1,7 +1,7 @@
 import { notesDataActions } from "./notes-data-slice"
 import axios from "axios"
-import Main from "../layout/add-note/Main"
-import { MainSliceActions } from "./MainSlice"
+// import Main from "../layout/add-note/Main"
+// import { MainSliceActions } from "./MainSlice"
 
 export const addNoteData = (notesData) => {
     return async (dispatch) => {
@@ -104,7 +104,8 @@ export const getNoteData = (page) => {
             // let j = 0
             for (let i in docs) {
                 // if (j < page) {
-                    const dateTime = docs[i].createdAt;
+                    // const dateTime = docs[i].createdAt;
+                    const dateTime = docs[i].updatedAt;
                     const notesDateTime = convertDateTime(dateTime)
                     const dateVal = dateTime.split("T")[0]
                     const timeVal = dateTime.split("T")[1].split(".")[0]
@@ -124,7 +125,8 @@ export const getNoteData = (page) => {
 
         try {
             await getNote()
-            dispatch(MainSliceActions.setLoadingNotes(false))
+            // dispatch(MainSliceActions.setLoadingNotes(false))
+            dispatch(notesDataActions.setLoadingNotes(false))
         } catch (error) {
             console.log("Get Error ..... " + error)
         }

@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    notesData: {},
-    deleteNoteKey: "",
+    // notesData: {},
+    // deleteNoteKey: "",
     notesListOne: [],
     pageVal: 1,
-    hasMore: false
+    hasMore: false,
+    loadingNotes: false
 }
 
 const notesDataSlice = createSlice({
@@ -17,13 +18,13 @@ const notesDataSlice = createSlice({
                 ...action.payload
             }
         },
-        setDeleteNoteKey(state, action) {
-            console.log(state.deleteNoteKey)
-            state.deleteNoteKey = action.payload
-        },
-        deletingNote(state, action) {
-            state.notesListOne = state.notesListOne.filter(item => item.noteKey !== action.payload)
-        },
+        // setDeleteNoteKey(state, action) {
+        //     console.log(state.deleteNoteKey)
+        //     state.deleteNoteKey = action.payload
+        // },
+        // deletingNote(state, action) {
+        //     state.notesListOne = state.notesListOne.filter(item => item.noteKey !== action.payload)
+        // },
         setNotesListOne(state, action) {
             // state.notesListOne = action.payload
             // state.notesListOne = [...state.notesListOne, ...action.payload]
@@ -54,6 +55,9 @@ const notesDataSlice = createSlice({
         },
         setHasMore(state, action) {
             state.hasMore = action.payload
+        },
+        setLoadingNotes(state, action) {
+            state.loadingNotes = action.payload
         }
     }
 })

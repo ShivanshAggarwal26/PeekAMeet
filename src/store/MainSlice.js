@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     isLogin: true,
     // pageVal: 1,
-    loadingNotes: false
+    // loadingNotes: false
 }
 
 const MainSlice = createSlice({
@@ -16,9 +16,9 @@ const MainSlice = createSlice({
         // setPageVal(state) {
         //     state.pageVal += 1;
         // },
-        setLoadingNotes(state, action) {
-            state.loadingNotes = action.payload;
-        }
+        // setLoadingNotes(state, action) {
+        //     state.loadingNotes = action.payload;
+        // }
     }
 })
 
