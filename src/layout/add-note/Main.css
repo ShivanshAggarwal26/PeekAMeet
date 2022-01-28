@@ -159,11 +159,22 @@
   color: #ffffff;
   background-color: #09a04f;
   border: none;
-  width: 90%;
+  width: 50%;
   height: 200%;
   margin-left: 5%;
+  cursor: pointer;
 }
 
 .addNoteButtonDiv {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancelAddButton {
+  border: none;
   width: 50%;
+  height: 200%;
+  margin-left: 5%;
+  cursor: pointer;
 }

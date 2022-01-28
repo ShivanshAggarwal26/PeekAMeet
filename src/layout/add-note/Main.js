@@ -1,14 +1,11 @@
 import "./Main.css";
-import MainContext from "../../context/MainContext";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import response from "../../files/response";
 import { useDispatch } from "react-redux";
 import { addNoteData } from "../../store/notes-actions";
-import {useHistory} from "react-router-dom"
+import {useHistory} from "react-router-dom";
 
 const Main = () => {
-    // const ctx = useContext(MainContext);
-    // const response = ctx.response;
     const data = response.data[0].customer;
     const firstName = data.firstName;
     const lastName = data.lastName;
@@ -18,13 +15,13 @@ const Main = () => {
         dateVal: "",
         timeVal: "",
         noteTextVal: ""
-    })
+    });
 
-    const dispatch = useDispatch()
-    const history = useHistory()
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const addNoteClickHandler = () => {
-        const dateTime = addFormData.dateVal + "T" + addFormData.timeVal + ".202Z"
+        const dateTime = addFormData.dateVal + "T" + addFormData.timeVal + ".202Z";
 
         const obj = {
             "createdFor": "5de9d89c64b57f3acc326725",
@@ -32,42 +29,45 @@ const Main = () => {
             "type": "followup",
             "createdBy": "5de9d89c64b57f3acc326724",
             "createdAt": dateTime,
-            // "updatedAt": "2019-12-16T10:17:23.717Z",
             "updatedAt": dateTime
-            // "id": "5df7542a38ebb518325d87e7"
-        }
+        };
 
-        dispatch(addNoteData(obj))
+        dispatch(addNoteData(obj));
 
         setAddFormData({
             dateVal: "",
             timeVal: "",
             noteTextVal: ""
-        })
+        });
 
-        history.replace("/notes")
+        history.replace("/notes");
     }
 
     const dateChangeHandler = (event) => {
         setAddFormData({
             ...addFormData,
             dateVal: event.target.value
-        })
+        });
     }
 
     const timeChangeHandler = (event) => {
         setAddFormData({
             ...addFormData,
             timeVal: event.target.value
-        })
+        });
     }
 
     const noteTextChangeHandler = (event) => {
         setAddFormData({
             ...addFormData,
             noteTextVal: event.target.value
-        })
+        });
     }
+
+    const cancelAddNoteClickHandler = () => {
+        history.replace("/notes");
+    }
+    
 
     return (
         <div className="main-add-notes">
@@ -102,14 +102,13 @@ const Main = () => {
 
             <div className="noteTextInputDiv">
                 <span className="noteSpan">Notes</span>
-                {/* <input className="noteTextClass" type="text" 
-                        onChange={noteTextChangeHandler} value={addFormData.noteTextVal}></input> */}
                 <textarea className="noteTextClass" type="text"
                         onChange={noteTextChangeHandler} value={addFormData.noteTextVal}></textarea>
             </div>
 
             <div className="addNoteButtonDiv">
                 <button className="addNoteButton" onClick={addNoteClickHandler}>Add Note</button>
+                <button className="cancelAddButton" onClick={cancelAddNoteClickHandler}>Cancel</button>
             </div>
 
         </div>

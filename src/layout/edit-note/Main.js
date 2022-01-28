@@ -1,45 +1,43 @@
 import "./Main.css";
-import MainContext from "../../context/MainContext";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import response from "../../files/response";
 import { useSelector, useDispatch } from "react-redux";
-import { editNoteData } from "../../store/notes-actions"
-import {useHistory} from "react-router-dom"
+import { editNoteData } from "../../store/notes-actions";
+import {useHistory} from "react-router-dom";
 
 const Main = (props) => {
-    // const ctx = useContext(MainContext);
-    // const response = ctx.response;
     const data = response.data[0].customer;
     const firstName = data.firstName;
     const lastName = data.lastName;
     const userName = firstName + " " + lastName;
 
-    const noteKey = props.noteKey
+    const noteKey = props.noteKey;
 
-    const history = useHistory()
+    const history = useHistory();
 
     const notesListOne = useSelector((state) => {
-        return state.notes.notesListOne
+        return state.notes.notesListOne;
     })
 
-    const notesData = notesListOne.filter(note => note.noteKey == noteKey)
+    console.log(notesListOne)
+    console.log(typeof(noteKey))
 
-    const noteTextVal = notesData.length > 0 ? notesData[0].noteText : ""
-    const noteDateVal = notesData.length > 0 ? notesData[0].dateVal : ""
-    const noteTimeVal = notesData.length > 0 ? notesData[0].timeVal : ""
+    const notesData = notesListOne.filter(note => note.noteKey === noteKey);
 
-    console.log(noteKey)
+    const noteTextVal = notesData.length > 0 ? notesData[0].noteText : "";
+    const noteDateVal = notesData.length > 0 ? notesData[0].dateVal : "";
+    const noteTimeVal = notesData.length > 0 ? notesData[0].timeVal : "";
 
     const [editFormData, setEditFormData] = useState({
         dateVal: noteDateVal,
         timeVal: noteTimeVal,
         noteTextVal: noteTextVal
-    })
+    });
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const editNoteClickHandler = () => {
-        const dateTime = editFormData.dateVal + "T" + editFormData.timeVal + ".202Z"
+        const dateTime = editFormData.dateVal + "T" + editFormData.timeVal + ".202Z";
 
         const obj = {
             "createdFor": "5de9d89c64b57f3acc326725",
@@ -47,13 +45,11 @@ const Main = (props) => {
             "type": "followup",
             "createdBy": "5de9d89c64b57f3acc326724",
             "createdAt": dateTime,
-            // "updatedAt": "2019-12-16T10:17:23.717Z",
             "updatedAt": dateTime
-            // "id": "5df7542a38ebb518325d87e7"
-        }
+        };
 
-        dispatch(editNoteData(obj, noteKey))
-        history.replace("/notes")
+        dispatch(editNoteData(obj, noteKey));
+        history.replace("/notes");
     }
 
     const dateChangeHandler = (event) => {
@@ -61,25 +57,25 @@ const Main = (props) => {
         setEditFormData({
             ...editFormData,
             dateVal: event.target.value
-        })
+        });
     }
 
     const timeChangeHandler = (event) => {
         setEditFormData({
             ...editFormData,
             timeVal: event.target.value
-        })
+        });
     }
 
     const noteTextChangeHandler = (event) => {
         setEditFormData({
             ...editFormData,
             noteTextVal: event.target.value
-        })
+        });
     }
 
     const cancelNoteClickHandler = () => {
-        history.replace("/notes")
+        history.replace("/notes");
     }
 
     return (
@@ -115,8 +111,6 @@ const Main = (props) => {
 
             <div className="noteTextInputDiv">
                 <span className="noteSpan">Notes</span>
-                {/* <input className="noteTextClass" type="text"
-                        onChange={noteTextChangeHandler} value={editFormData.noteTextVal}></input> */}
                 <textarea className="noteTextClass" type="text"
                         onChange={noteTextChangeHandler} value={editFormData.noteTextVal}></textarea>
             </div>

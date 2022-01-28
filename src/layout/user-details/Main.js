@@ -12,41 +12,29 @@ import axios from "axios";
 
 const Main = () => {
 
-    // if (localStorage.getItem("token")) {
-
-    // const ctx = useContext(MainContext)
+    const ctx = useContext(MainContext);
         
-    // const getResponse = async () => {
-    //     const userId = localStorage.getItem("userId")
-    //     try {
-    //         const userId = localStorage.getItem("userId")
-    //         const url = "http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/user/nearby/" + userId
-    //         const res = await axios.get(url)
-    //     } catch (error) {
-    //         console.log("Error ..... " + error)
-    //         ctx.updateResponse(response)
-    //     }
-    // }
+    const getResponse = async () => {
+        try {
+            const userId = localStorage.getItem("userId");
+            const url = "http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/user/nearby/" + userId;
+            await axios.get(url);
+        } catch (error) {
+            ctx.updateResponse(response);
+        }
+    }
 
-    // useEffect(() => {
-    //     getResponse()
-    // })
+    useEffect(() => {
+        getResponse();
+    })
 
-    // ctx.updateResponse(response)
-
-    // const response = ctx.response
-
-    const data = response.data[0].customer
-
-    // const newResponse = ctx.response
-    // const data = newResponse.data[0].customer
+    const data = response.data[0].customer;
 
     const tagline = data.tagline;
     const bio = data.bio;
     const industry = data.industry;
     const industryTag = industry.map((val) => {
         return (
-            // <RectangleButton tagValue={val} />
             <MainRectangle inputData={val}
                 divClassValue={classes.industryDiv}
                 spanClassValue={classes.industrySpan}
@@ -56,7 +44,6 @@ const Main = () => {
     const organisationGroups = data.organisationGroups;
     const ogTag = organisationGroups.map((val) => {
         return (
-            // <RectangleButton tagValue={val} />
             <MainRectangle inputData={val}
                 divClassValue={classes.organizationGroupDiv}
                 spanClassValue={classes.organizationGroupSpan}
@@ -66,7 +53,6 @@ const Main = () => {
     const interestActivities = data.interestActivities;
     const iaTag = interestActivities.map((val) => {
         return (
-            // <RectangleButton tagValue={val} />
             <MainRectangle inputData={val}
                 divClassValue={classes.interestActivityDiv}
                 spanClassValue={classes.interestActivitySpan}
@@ -76,7 +62,6 @@ const Main = () => {
     const alumni = data.alumni;
     const alumniTag = alumni.map((val) => {
         return (
-            // <RectangleButton tagValue={val} />
             <MainRectangle inputData={val}
                 divClassValue={classes.alumniDiv}
                 spanClassValue={classes.alumniSpan}
@@ -86,7 +71,6 @@ const Main = () => {
     const languages = data.languages;
     const languagesTag = languages.map((val) => {
         return (
-            // <RectangleButton tagValue={val} />
             <MainRectangle inputData={val}
                 divClassValue={classes.languageDiv}
                 spanClassValue={classes.languageSpan}
