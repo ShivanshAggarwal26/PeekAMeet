@@ -19,27 +19,6 @@ const Main = () => {
                     {" lets you network more effectively to achieve your business and career goals"}
                 </span>
                 <div className="rectangleTags">
-                    {/* <div className="freelancerRectangle">
-                        <span className="Freelancer">
-                            Freelancer
-                        </span>
-                    </div>
-                    <div className="jobSeekerRectangle">
-                        <span className="Job-Seeker">
-                            Job Seeker
-                        </span>
-                    </div>
-                    <div className="enterpreneurRectangle">
-                        <span className="Enterpreneur">
-                            Enterpreneur
-                        </span>
-                    </div>
-                    <div className="mompreneurRectangle">
-                        <span className="Mompreneur">
-                            Mompreneur
-                        </span>
-                    </div> */}
-
                     <MainRectangle inputData={"Freelancer"} 
                                     divClassValue={classes.freelancerDiv} 
                                     spanClassValue={classes.freelancerSpan}/>
@@ -54,8 +33,6 @@ const Main = () => {
                                     spanClassValue={classes.mompreneurSpan}/>
                 </div>
                 <div className="rectangleTags">
-                    {/* <div className="internshipSeekerRectangle"></div>
-                    <div className="environmentalChangeRectangle"></div> */}
                     <MainRectangle inputData={"Internship Seeker"} 
                                     divClassValue={classes.internshipSeekerDiv} 
                                     spanClassValue={classes.internshipSeekerSpan}/>

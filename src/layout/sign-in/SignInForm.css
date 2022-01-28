@@ -19,3 +19,12 @@
     letter-spacing: normal;
     color: #fff;
 }
+
+.rememberMeClass {
+    margin-left: 7%;
+}
+
+.rememberMeClass span {
+    margin-left: 1rem;
+    color: #152d4e;
+}

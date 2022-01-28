@@ -28,8 +28,6 @@ const NotesCard = (props) => {
         history.push(`/edit-note/${noteKey}`)
     }
 
-    console.log(typeof(noteText))
-
     const showNoteText = noteText.length > 40 ? noteText.substring(0, 40) + "..." : noteText
     
     return (

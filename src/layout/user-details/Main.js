@@ -1,6 +1,6 @@
 import "./Main.css";
-// import MainContext from "../../context/MainContext";
-// import { useContext } from "react";
+import MainContext from "../../context/MainContext";
+import { useContext, useEffect } from "react";
 import response from "../../files/response";
 import userIcon from "../../assets/images/userIcon/userIcon.webp";
 import mailIcon from "../../assets/images/information-icons/mail-icon.png";
@@ -8,78 +8,81 @@ import websiteIcon from "../../assets/images/information-icons/website-icon.png"
 import callIcon from "../../assets/images/information-icons/call-icon.png";
 import MainRectangle from "../../components/MainRectangle";
 import classes from "../../components/MainRectangle.module.css";
+import axios from "axios";
 
 const Main = () => {
-    // const ctx = useContext(MainContext)
 
-    // if (localStorage.getItem("token")) {
-    //     const userId = localStorage.getItem("userId")
-    //     axios.get("http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/user/nearby",
-    //                 {
-    //                     params: {
-    //                         userId: userId
-    //                     }
-    //                 }).then((res) => {
-    //                     console.log(res)
-    //                 }).catch((error) => {
-    //                     console.log(error)
-    //                     ctx.updateResponse(response)
-    //                 })
-    // }
+    const ctx = useContext(MainContext);
+        
+    const getResponse = async () => {
+        try {
+            const userId = localStorage.getItem("userId");
+            const authorization = localStorage.getItem("token");
+            const url = "http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/user/nearby/";
+            await axios.get(url, {
+                headers: {
+                    authorization: authorization
+                },
+                params: {
+                    userId: userId
+                }
+            });
+        } catch (error) {
+            ctx.updateResponse(response);
+        }
+    }
 
-    // const response = ctx.response
+    useEffect(() => {
+        getResponse();
+    }, []);
 
-    const data = response.data[0].customer
+    const data = response.data[0].customer;
+
     const tagline = data.tagline;
     const bio = data.bio;
     const industry = data.industry;
     const industryTag = industry.map((val) => {
         return (
-            // <RectangleButton tagValue={val} />
             <MainRectangle inputData={val}
-                            divClassValue={classes.industryDiv}
-                            spanClassValue={classes.industrySpan}
-                            key={val}/>
+                divClassValue={classes.industryDiv}
+                spanClassValue={classes.industrySpan}
+                key={val} />
         )
     })
     const organisationGroups = data.organisationGroups;
     const ogTag = organisationGroups.map((val) => {
         return (
-            // <RectangleButton tagValue={val} />
             <MainRectangle inputData={val}
-                            divClassValue={classes.organizationGroupDiv}
-                            spanClassValue={classes.organizationGroupSpan}
-                            key={val}/>
+                divClassValue={classes.organizationGroupDiv}
+                spanClassValue={classes.organizationGroupSpan}
+                key={val} />
         )
     })
     const interestActivities = data.interestActivities;
     const iaTag = interestActivities.map((val) => {
         return (
-            // <RectangleButton tagValue={val} />
             <MainRectangle inputData={val}
-                            divClassValue={classes.interestActivityDiv}
-                            spanClassValue={classes.interestActivitySpan}
-                            key={val}/>
+                divClassValue={classes.interestActivityDiv}
+                spanClassValue={classes.interestActivitySpan}
+                key={val} />
         )
     })
     const alumni = data.alumni;
     const alumniTag = alumni.map((val) => {
         return (
-            // <RectangleButton tagValue={val} />
             <MainRectangle inputData={val}
-                            divClassValue={classes.alumniDiv}
-                            spanClassValue={classes.alumniSpan}
-                            key={val}/>
+                divClassValue={classes.alumniDiv}
+                spanClassValue={classes.alumniSpan}
+                key={val} />
         )
     })
     const languages = data.languages;
     const languagesTag = languages.map((val) => {
         return (
-            // <RectangleButton tagValue={val} />
             <MainRectangle inputData={val}
-                            divClassValue={classes.languageDiv}
-                            spanClassValue={classes.languageSpan}
-                            key={val}/>
+                divClassValue={classes.languageDiv}
+                spanClassValue={classes.languageSpan}
+                key={val} />
         )
     })
     const userEmail = data.email;
@@ -94,7 +97,7 @@ const Main = () => {
 
     return (
         <div className="main-user-details">
-            
+
             <div className="userCard">
                 <div className="Bitmap">
                     <img src={userIcon} alt="" className="userImage"></img>
@@ -117,38 +120,38 @@ const Main = () => {
                             Edit Profile
                         </span>
                     </div>
-                </div>            
+                </div>
             </div>
 
-            <div>
+            <div className="tagLineClass">
                 <span>{tagline}</span>
             </div>
-            
-            <div>
+
+            <div className="biographyClass">
                 <span>{bio}</span>
             </div>
-            
+
             <div id="user-details-card-id">
                 <span className="Industrys">
                     Industry(s)
                 </span>
                 {industryTag}
             </div>
-            
+
             <div id="user-details-card-id">
                 <span className="Organizations-and-Groups">
                     Organizations and Groups
                 </span>
                 {ogTag}
             </div>
-            
+
             <div id="user-details-card-id">
                 <span className="Interests-and-Activi">
                     Interests and Activities
                 </span>
                 {iaTag}
             </div>
-            
+
             <div id="user-details-card-id">
                 <span className="Alumni">
                     Alumni
@@ -184,7 +187,7 @@ const Main = () => {
                 </div>
             </div>
 
-            <div>
+            <div className="businessAddressClass">
                 <span className="Business-Address">
                     Business Address
                 </span>

@@ -1,10 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    notesData: {},
-    deleteNoteKey: "",
-    notesListOne: []
-}
+    notesListOne: [],
+    pageVal: 1,
+    hasMore: false,
+    loadingNotes: false
+};
 
 const notesDataSlice = createSlice({
     name: "notes",
@@ -13,22 +14,35 @@ const notesDataSlice = createSlice({
         setNotesData(state, action) {
             state.notesData = {
                 ...action.payload
-            }
-        },
-        setDeleteNoteKey(state, action) {
-            console.log(state.deleteNoteKey)
-            state.deleteNoteKey = action.payload
+            };
         },
         deletingNote(state, action) {
-            state.notesListOne = state.notesListOne.filter(item => item.noteKey !== action.payload)
+            state.notesListOne = state.notesListOne.filter(item => item.noteKey !== action.payload);
         },
         setNotesListOne(state, action) {
-            state.notesListOne = action.payload
-            console.log(state.notesListOne)
+            let s = new Set();
+            action.payload.map(item => state.notesListOne.push(item));
+            state.notesListOne.map(item => s.add(JSON.stringify(item)));
+            state.notesListOne = [];
+            let arr = Array.from(s);
+            arr.map(item => state.notesListOne.push(JSON.parse(item)));
         },
         editingNote(state, action) {
             state.notesListOne = state.notesListOne.map(item =>
-                item.noteKey === action.payload.noteKey ? action.payload.noteData : item)
+                item.noteKey === action.payload.noteKey ? action.payload.noteData : item);
+        },
+        setPageVal(state) {
+            state.pageVal += 1;
+        },
+        addingNote(state) {
+            state.pageVal = 1;
+            state.notesListOne = [];
+        },
+        setHasMore(state, action) {
+            state.hasMore = action.payload;
+        },
+        setLoadingNotes(state, action) {
+            state.loadingNotes = action.payload;
         }
     }
 })
