@@ -191,7 +191,7 @@
     },
     {
       "createdFor": "5de9d89c64b57f3acc326725",
-      "noteText": "reminder edited 27",
+      "noteText": "reminder edited 27 reminder edited 27 reminder edited 27 reminder edited 27 reminder edited 27 reminder edited 27 reminder edited 27 reminder edited 27 reminder edited 27  reminder edited 27",
       "type": "followup",
       "createdBy": "5de9d89c64b57f3acc326724",
       "createdAt": "2022-01-01T13:29:18.202Z",
@@ -215,15 +215,6 @@
       "createdAt": "2022-01-01T14:01:23.202Z",
       "updatedAt": "2022-01-01T14:01:23.202Z",
       "id": 29
-    },
-    {
-      "createdFor": "5de9d89c64b57f3acc326725",
-      "noteText": "reminder edited 30",
-      "type": "followup",
-      "createdBy": "5de9d89c64b57f3acc326724",
-      "createdAt": "2022-01-01T16:23:05.202Z",
-      "updatedAt": "2022-01-01T16:23:05.202Z",
-      "id": 30
     }
   ],
   "comments": [],

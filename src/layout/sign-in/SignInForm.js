@@ -59,6 +59,10 @@ const SignInForm = () => {
                         </span>
                     </button>
                 </div>
+                <div className="rememberMeClass">
+                    <input type="checkbox"></input>
+                    <span>Remember Me</span>
+                </div>
             </div>
         </form>
     )

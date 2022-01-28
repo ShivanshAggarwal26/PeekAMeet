@@ -17,8 +17,16 @@ const Main = () => {
     const getResponse = async () => {
         try {
             const userId = localStorage.getItem("userId");
-            const url = "http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/user/nearby/" + userId;
-            await axios.get(url);
+            const authorization = localStorage.getItem("token");
+            const url = "http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/user/nearby/";
+            await axios.get(url, {
+                headers: {
+                    authorization: authorization
+                },
+                params: {
+                    userId: userId
+                }
+            });
         } catch (error) {
             ctx.updateResponse(response);
         }
