@@ -1,0 +1,127 @@
+import "./Main.css";
+import { useState } from "react";
+import response from "../../files/response";
+import { useSelector, useDispatch } from "react-redux";
+import { editNoteData } from "../../store/notes-actions";
+import {useHistory} from "react-router-dom";
+
+const Main = (props) => {
+    const data = response.data[0].customer;
+    const firstName = data.firstName;
+    const lastName = data.lastName;
+    const userName = firstName + " " + lastName;
+
+    const noteKey = props.noteKey;
+
+    const history = useHistory();
+
+    const notesListOne = useSelector((state) => {
+        return state.notes.notesListOne;
+    })
+
+    console.log(notesListOne)
+    console.log(typeof(noteKey))
+
+    const notesData = notesListOne.filter(note => note.noteKey === noteKey);
+
+    const noteTextVal = notesData.length > 0 ? notesData[0].noteText : "";
+    const noteDateVal = notesData.length > 0 ? notesData[0].dateVal : "";
+    const noteTimeVal = notesData.length > 0 ? notesData[0].timeVal : "";
+
+    const [editFormData, setEditFormData] = useState({
+        dateVal: noteDateVal,
+        timeVal: noteTimeVal,
+        noteTextVal: noteTextVal
+    });
+
+    const dispatch = useDispatch();
+
+    const editNoteClickHandler = () => {
+        const dateTime = editFormData.dateVal + "T" + editFormData.timeVal + ".202Z";
+
+        const obj = {
+            "createdFor": "5de9d89c64b57f3acc326725",
+            "noteText": editFormData.noteTextVal,
+            "type": "followup",
+            "createdBy": "5de9d89c64b57f3acc326724",
+            "createdAt": dateTime,
+            "updatedAt": dateTime
+        };
+
+        dispatch(editNoteData(obj, noteKey));
+        history.replace("/notes");
+    }
+
+    const dateChangeHandler = (event) => {
+
+        setEditFormData({
+            ...editFormData,
+            dateVal: event.target.value
+        });
+    }
+
+    const timeChangeHandler = (event) => {
+        setEditFormData({
+            ...editFormData,
+            timeVal: event.target.value
+        });
+    }
+
+    const noteTextChangeHandler = (event) => {
+        setEditFormData({
+            ...editFormData,
+            noteTextVal: event.target.value
+        });
+    }
+
+    const cancelNoteClickHandler = () => {
+        history.replace("/notes");
+    }
+
+    return (
+        <div className="main-edit-notes">
+
+            <div className="editNoteHeaderDiv">
+                <span className="Edit-Note">
+                    Edit Note
+                </span>
+            </div>
+
+            <div className="nameDiv">
+                <span className="nameSpan">{userName}</span>
+            </div>
+
+            <div className="dateTimeInputDiv">
+                <div className="dateInputDiv">
+                    <span className="Follow-Up-Date">
+                        Follow Up Date
+                    </span>
+                    <input className="inputDateClass" type="date" 
+                            onChange={dateChangeHandler} value={editFormData.dateVal}></input>
+                </div>
+
+                <div className="timeInputDiv">
+                    <span className="time">
+                        Time
+                    </span>
+                    <input className="timeInputClass" type="time" step="1" 
+                            onChange={timeChangeHandler} value={editFormData.timeVal}></input>
+                </div>
+            </div>
+
+            <div className="noteTextInputDiv">
+                <span className="noteSpan">Notes</span>
+                <textarea className="noteTextClass" type="text"
+                        onChange={noteTextChangeHandler} value={editFormData.noteTextVal}></textarea>
+            </div>
+
+            <div className="editNoteButtonDiv">
+                <button className="editNoteButton" onClick={editNoteClickHandler}>Edit Note</button>
+                <button className="cancelEditButton" onClick={cancelNoteClickHandler}>Cancel</button>
+            </div>
+
+        </div>
+    )
+}
+
+export default Main

@@ -1,0 +1,105 @@
+#spanIdValue {
+    font-size: 15px;
+    overflow: auto;
+}
+
+#divIdValue {
+    text-align: center;
+    padding: 7px 14px 7px 14px;
+    width: fit-content;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.freelancerDiv {
+    background-color: rgba(241, 124, 43, 0.18);
+}
+
+.freelancerSpan {
+    color: #f17c2b;
+}
+
+
+.jobSeekerDiv {
+    background-color: rgba(150, 54, 143, 0.18);
+}
+
+.jobSeekerSpan {
+    color: #96368f;
+}
+
+
+.enterpreneurDiv {
+    background-color: rgba(26, 150, 145, 0.18);
+}
+
+.enterpreneurSpan {
+    color: #1a9691;
+}
+
+
+.mompreneurDiv {
+    background-color: rgba(230, 49, 131, 0.18);
+}
+
+.mompreneurSpan {
+    color: #e63183;
+}
+
+
+.internshipSeekerDiv {
+    background-color: rgba(0, 128, 175, 0.17);
+}
+
+.internshipSeekerSpan {
+    color: #0080af;
+}
+
+
+.environmentalChangeMakerDiv {
+    background-color: rgba(231, 33, 44, 0.18);
+}
+
+.environmentalChangeMakerSpan {
+    color: #e7212c;
+}
+
+.industryDiv {
+    background-color: rgba(241, 124, 43, 0.18);
+}
+
+.industrySpan {
+    color: #f17c2b;
+}
+
+.organizationGroupDiv {
+    background-color: rgba(150, 54, 143, 0.18);
+}
+
+.organizationGroupSpan {
+    color: #96368f;
+}
+
+.interestActivityDiv {
+    background-color: rgba(26, 150, 145, 0.18);
+}
+
+.interestActivitySpan {
+    color: #1a9691;
+}
+
+.alumniDiv {
+    background-color: rgba(230, 49, 131, 0.18);
+}
+
+.alumniSpan {
+    color: #e63183;
+}
+
+.languageDiv {
+    background-color: rgba(0, 128, 175, 0.17);
+}
+
+.languageSpan {
+    color: #0080af;
+}

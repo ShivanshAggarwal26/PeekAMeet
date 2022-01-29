@@ -1,0 +1,104 @@
+.main-notes {
+    width: 35%;
+    height: 81%;
+    background-color: #ffffff;
+    margin-top: 1.5%;
+    margin-left: 32.5%;
+    margin-right: 32.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .main-notes {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.Bitmap {
+    width: 100px;
+    height: 100px;
+  }
+
+  .userImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .userCard {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1%;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .userInfoClass {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainInfoClass {
+    /* margin: 16px 82px 6px 93px; */
+    margin: 1% 1% 1% 1%;
+    font-family: DMSans;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #152d4e;
+  }
+
+  .Share {
+    font-family: DMSans;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  }
+
+  .Edit-Profile {
+    font-family: DMSans;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  }
+
+  .userCardButton {
+    width: 100px;
+    height: 20%;
+    margin: 2%;
+    border-radius: 4px;
+    background-color: #09a04f;
+  }
+
+  .notesCardList {
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+  }
+
+  .loaderClass {
+    text-align: center;
+    margin: 5%;
+    font-size: 20px;
+  }
+
+  .addNoteDivClass {
+    color: #09a04f;
+    margin: 1%;
+    cursor: pointer;
+  }

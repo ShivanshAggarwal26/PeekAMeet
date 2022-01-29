@@ -1,0 +1,230 @@
+.main-user-details {
+    /* width: 65%; */
+    width: 35%;
+    height: auto;
+    background-color: #ffffff;
+    margin-top: 1.5%;
+    margin-left: 32.5%;
+    margin-right: 32.5%;
+    /* margin-left: 17.5%;
+    margin-left: 17.5%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* overflow: scroll; */
+}
+
+@media only screen and (max-device-width: 660px) {
+  .main-user-details {
+    width: 65%;
+    margin-left: 17.5%;
+    margin-left: 17.5%;
+  }
+}
+
+.Industrys {
+    margin-top: 10px;
+    font-family: DMSans;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .Organizations-and-Groups {
+    font-family: DMSans;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .Interests-and-Activi {
+    font-family: DMSans;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .Alumni {
+    font-family: DMSans;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .Languages {
+    font-family: DMSans;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .infoClass {
+    display: block;
+    margin: 0 0 5px 14px;
+    font-family: DMSans;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #1cb54f;
+  }
+
+  .Business-Address {
+    /* width: 98px;
+    height: 16px;
+    margin: 0 58px 4px 0; */
+    font-family: DMSans;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+  }
+
+  .addressClass {
+    /* margin: 4px 35px 3px 0; */
+    font-family: DMSans;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+  }
+
+  .Bitmap {
+    width: 100px;
+    height: 100px;
+    /* margin: 0 95px 16px 94px; */
+  }
+
+  .userImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .userCard {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1%;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .userInfoClass {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainInfoClass {
+    margin: 1% 1% 1% 1%;
+    font-family: DMSans;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #152d4e;
+  }
+
+  .Share {
+    font-family: DMSans;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  }
+
+  .Edit-Profile {
+    font-family: DMSans;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  }
+
+  .userCardButton {
+    margin: 2%;
+    padding: 5%;
+    border-radius: 4px;
+    background-color: #09a04f;
+    text-align: center;
+  }
+
+  #user-details-card-id {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #userInformationId {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #userInformationId img {
+    width: 19px;
+    height: 19px;
+  }
+
+  .userInformationDiv {
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .businessAddressClass {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tagLineClass {
+    display: flex;
+    margin: 0% 5% 0% 5%;
+  }
+
+  .biographyClass {
+    display: flex;
+    margin: 0% 5% 0% 5%;
+  }

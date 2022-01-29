@@ -1,0 +1,15 @@
+.headerIcon {
+    display: flex;
+    margin: 2%;
+}
+
+.headerIconText {
+    color: #ffffff;
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+.navLinkClass {
+    text-decoration: none;
+    margin-top: 7px;
+}

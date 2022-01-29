@@ -1,0 +1,44 @@
+.PEEKaMEET {
+    width: 7.6%;
+    height: 42.9%;
+    margin: 8px 0 8px 8px;
+    font-family: CircularStd;
+    font-size: 18.8px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    color: #fff;
+  }
+
+  .mainHeader {
+    width: 79%;
+    height: 7.3%;
+    /* margin: 0 0 30px; */
+    padding: 1% 10.5% 0% 10.5%;
+    background-color: #09a04f;
+    display: flex;
+  }
+
+  .signInDiv {
+    width: 6.4%;
+    height: 3.9%;
+    padding: 5px 17px 4px 19px;
+    border-radius: 4px;
+    position: absolute;
+    right: 10.5%;
+  }
+
+  .Sign-In {
+    width: 58.6%;
+    height: 70%;
+    font-family: DMSans;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  }

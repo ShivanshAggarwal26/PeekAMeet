@@ -1,0 +1,37 @@
+.inputBox {
+    width: 87.2%;
+    height: 36px;
+    margin: 6px 6.1% 0 6.1%;
+    border-radius: 4px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.11);
+    border: solid 1px var(--algae-green);
+    background-color: #fff;
+}
+
+.Email {
+    width: 31px;
+    height: 16px;
+    margin: 0 400px 6px 6.1%;
+    font-family: DMSans;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+}
+
+.Password {
+    width: 54px;
+    height: 16px;
+    margin: 0 377px 6px 6.1%;
+    font-family: DMSans;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9ea0a3;
+}
